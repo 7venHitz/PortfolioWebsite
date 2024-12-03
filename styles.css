@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    margin: 0;
+   font-family: monospace;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+    font-size: larger;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+h1, h2 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: fantasy;
+}
+
+/* About Section */
+#about {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 2rem 0;
+}
+
+.photo-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding: 1rem;
+    scrollbar-width: none;
+}
+
+.photo-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+.photo-scroll img {
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.photo-scroll img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid white;
+    margin-top: 2rem;
+}
+
+#animated-header {
+    font-family: fantasy;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#animated-header:hover {
+    transform: scale(1.1);
+}
+
+/* Wave Effect */
+header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Lightbox styles */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Fade effect for sections */
+.fade-section {
+    opacity: 1;
+    transform: translateY(20px); /* Slight movement for animation */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+}
+.fade-section:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.fade-section:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.fade-section:nth-child(3) {
+    transition-delay: 0.3s;
+}
