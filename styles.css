@@ -156,3 +156,19 @@ header::after {
 .fade-section:nth-child(3) {
     transition-delay: 0.3s;
 }
+
+
+/* styles.css */
+#about {
+    text-align: center; /* Center-aligns text and images in the About section */
+    padding: 20px;
+    color: white;
+}
+
+#about img {
+    max-width: 200px; /* Limits the width of the image */
+    border-radius: 50%; /* Makes the image circular if it's a square */
+    margin-top: 15px; /* Adds some spacing between the text and image */
+    border: 2px solid white; /* Adds a white border around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
+}
